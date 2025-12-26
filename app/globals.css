@@ -2,25 +2,52 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --muted-foreground: #666666;
+  /* Terminal link color - classic blue */
+  --link: hsl(240 100% 47%);
+  --link-hover: hsl(240 100% 35%);
+
+  /* Cursor animation */
+  --cursor-blink: 1s step-end infinite;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffff;
+    --link: hsl(210 100% 70%);
+    --link-hover: hsl(210 100% 80%);
+    --muted-foreground: #a1a1aa;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jetbrains-mono);
+  font-size: 12px;
 }
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink var(--cursor-blink);
+}
+
