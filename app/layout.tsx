@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`${jetbrainsMono.variable} antialiased min-h-screen bg-background`}
       >
         <main className="max-w-2xl px-6 pt-8 pb-12 md:pt-12 md:pb-20">
-          {children}
+        {children}
         </main>
       </body>
     </html>
