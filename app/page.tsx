@@ -66,8 +66,7 @@ export default async function Home() {
       <section className="mb-2">
         <h2 className="font-semibold mb-2">projects:</h2>
         <ProjectItem title="Portfolio" href="/" description="this website" />
-        <ProjectItem title="Cinelog" href="https://github.com/dumbified/cinelog" description="a minimal watchlist tracker app" />
-        <ProjectItem title="Forecast accuracy dashboard" href="https://dmdwfall.vercel.app" description="a forecast accuracy analytics dashboard for ViTrox's MVS-T OF department"/>
+        <ProjectItem title="Forecast accuracy dashboard" href="https://github.com/dumbified/mvst" description="an internal analytics dashboard for ViTrox, used to track & measure the actual shipment of machines against the forecasted quantity"/>
       </section>
 
       <Divider />

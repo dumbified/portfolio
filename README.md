@@ -1,5 +1,5 @@
-konnichiwassup, yee ern here.
+welcome to my repo for portfolio site
 
-this is [me](https://drive.google.com/file/d/14Al-zptivnbPUULxYvn4DZ0aFhaYe5Yx/view?usp=share_link).
+this is [me](https://yeeern.com).
 
 hope u have a good day :)
