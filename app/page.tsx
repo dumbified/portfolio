@@ -3,6 +3,7 @@ import Divider from "./components/divider";
 import Info from "./components/info";
 import Link from "./components/link";
 import ProjectItem from "./components/project-item";
+import AsciiSprite from "./components/ascii-sprite";
 import { getPosts } from "@/lib/writing";
 
 const GIST_URL = "https://gist.githubusercontent.com/dumbified/f01d03b5586bdb66ac6f7f6ecc71fdeb/raw/status.json";
@@ -12,7 +13,7 @@ async function getStatus() {
     const res = await fetch(GIST_URL, { cache: 'no-store' });
     if (!res.ok) throw new Error();
     return res.json();
-  } catch (e) {
+  } catch {
     return { 
       status: "full-time student", 
       last_updated: "2025-12",
@@ -29,11 +30,12 @@ export default async function Home() {
   return (
     <>
       {/* Header */}
-      <header className="mb-4">
+      <header className="mb-2 md:mb-4">
         <h1 className="text-lg font-semibold tracking-tight">
           yee ern
           <BlinkingCursor />
         </h1>
+        <p className="text-muted-foreground text-sm mt-1">cs student</p>
       </header>
       <Divider />
 
@@ -58,20 +60,20 @@ export default async function Home() {
       {/* About */}
       <section className="mb-2">
         <h2 className="font-semibold mb-2">about:</h2>
-        <p className="mb-1">a computer science student interested in design and modern technologies.</p>
-        <p className="mb-1 italic">less is more. ☉ ‿ ⚆</p>
+        <p className="mb-1">interested in design and modern technologies.</p>
+        <p className="mb-1">previously worked at <Link href="https://vitrox.com" >ViTrox Technologies</Link>
+        , building a forecast accuracy analytics dashboard for the team.</p>
       </section>
       <Divider />
 
       {/* Projects */}
       <section className="mb-2">
         <h2 className="font-semibold mb-2">projects:</h2>
-        <ProjectItem title="Portfolio" href="/" description="this website" />
-        <ProjectItem title="Forecast accuracy dashboard" href="https://github.com/dumbified/mvst" description="an internal analytics dashboard for ViTrox, used to track & measure the actual shipment of machines against the forecasted quantity"/>
+        <ProjectItem title="Forecast accuracy analytics dashboard" href="https://github.com/dumbified/mvst"/>
       </section>
-      <Divider />
 
       {/* Blog */}
+      {/*<Divider />
       <section className="mb-2">
         <h2 className="font-semibold mb-2">writing:</h2>
         {recentPosts.length === 0 ? (
@@ -86,8 +88,14 @@ export default async function Home() {
             ))}
           </>
         )}
-      </section>
+      </section>*/}
 
+      <Divider />
+      <AsciiSprite
+          src="/joe-sprites.png"
+          cols={100}
+          className="mb-3 w-[280px] max-w-[85vw] md:w-[420px] md:max-w-[520px]"
+        />
       <Divider />
       {/* Footer */}
       <footer>
